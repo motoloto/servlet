@@ -1,0 +1,12 @@
+http://localhost:8081/Security3_CUST_BASIC/HeaderSnoop
+--------------------------------------------------------------------------------------    
+  (檢查 【請求標頭 authorization: Basic V2FsbGFjZTpjaGVlc2U=】)
+
+
+http://localhost:8081/Security3_CUST_BASIC/CustomAuth
+-------------------------------------------------------------------------------------
+  (自定 BASIC 驗證的 Servlet)
+
+Wallace  cheese
+Gromit   sheepnapper
+Penguin  evil

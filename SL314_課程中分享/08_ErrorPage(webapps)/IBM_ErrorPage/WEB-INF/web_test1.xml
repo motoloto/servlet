@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+    
+    <error-page>
+        <error-code>
+            400
+        </error-code>
+        <location>
+            /error400.html
+        </location>
+    </error-page>
+    
+    <error-page>
+        <error-code>
+            404
+        </error-code>
+        <location>
+            /error404.html
+        </location>
+    </error-page>
+
+
+    <error-page>
+        <error-code>
+            500
+        </error-code>
+        <location>
+            /error500.html
+        </location>
+    </error-page>
+
+   
+    <error-page>
+        <exception-type>
+            javax.servlet.ServletException
+        </exception-type>
+        <location>
+            /error500_ServletException.html
+        </location>
+    </error-page>
+    
+
+
+  <!--ª`·N·í¦³¥Î¨ì¡iÃB¥~¸ô®|¸ê°T¡j®É¥²¶·¨Ï¥Î¡i«e¸m¸ô®|¹ïÀ³¡jªº³]©w  -->
+	<servlet>
+		<servlet-name>ViewFile</servlet-name>
+		<servlet-class>ViewFile</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewFile</servlet-name>
+		<url-pattern>/ViewFile/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>ViewFile2</servlet-name>
+		<servlet-class>ViewFile2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ViewFile2</servlet-name>
+		<url-pattern>/ViewFile2</url-pattern>
+	</servlet-mapping>
+    
+
+  <servlet>
+		<servlet-name>ErrorDisplay</servlet-name>
+		<servlet-class>ErrorDisplay</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ErrorDisplay</servlet-name>
+		<url-pattern>/ErrorDisplay</url-pattern>
+	</servlet-mapping>
+	
+</web-app>

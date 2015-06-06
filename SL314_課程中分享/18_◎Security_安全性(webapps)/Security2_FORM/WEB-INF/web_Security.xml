@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>
+                SecretProtection
+            </web-resource-name>
+            <url-pattern>
+                /*   <!-- /* ©Î /servlet/oreilly.servlet.example.SalaryServer ª`·N: «ü³o­ÓURLºô­¶­n¨ü«OÅ@ --> 
+            </url-pattern>
+            
+            <http-method>
+                GET
+            </http-method>
+            <http-method>
+                POST
+            </http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>
+                tomcat     <!-- ª`·N:role(¨¤¦â), «ü½Ö¤~¯àµn¤J¦¨¥\, »PX:\jakarta-tomcat-4.0.4\conf\tomcat-users.xml ¬ÛÃö³s--> 
+            </role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>
+            FORM       <!-- ÄÝ¦óºØÅçÃÒ(Authentication)ªk¤§¤@ : BASIC, DIGEST, FORM, CLIENT-CERT -->
+        </auth-method>                                               
+        
+        <form-login-config>
+            <form-login-page>/loginpage.html</form-login-page>
+            <form-error-page>/errorpage.html</form-error-page>
+        </form-login-config>                                               
+    </login-config>                                                  
+
+
+    <security-role>
+        <role-name>
+            tomcat
+        </role-name>
+    </security-role>
+    
+    
+<!--
+ http://localhost:8081/Security1_BASIC
+ http://localhost:8081/Security1_BASIC/date.jsp
+ 
+ ¥H¤U´ú¸Õ only
+ http://localhost:8081/Security1_BASIC/AuthenticationSnoop
+ http://localhost:8081/Security1_BASIC/HeaderSnoop
+ http://localhost:8081/Security1_BASIC/PersonalizedWelcome
+ http://localhost:8081/Security1_BASIC/SalaryServer
+-->
+
+	<servlet>
+		<servlet-name>AuthenticationSnoop</servlet-name>
+		<servlet-class>servlet_examples.AuthenticationSnoop</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AuthenticationSnoop</servlet-name>
+		<url-pattern>/AuthenticationSnoop</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HeaderSnoop</servlet-name>
+		<servlet-class>servlet_examples.HeaderSnoop</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HeaderSnoop</servlet-name>
+		<url-pattern>/HeaderSnoop</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>PersonalizedWelcome</servlet-name>
+		<servlet-class>servlet_examples.PersonalizedWelcome</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>PersonalizedWelcome</servlet-name>
+		<url-pattern>/PersonalizedWelcome</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SalaryServer</servlet-name>
+		<servlet-class>servlet_examples.SalaryServer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SalaryServer</servlet-name>
+		<url-pattern>/SalaryServer</url-pattern>
+	</servlet-mapping>
+
+</web-app>

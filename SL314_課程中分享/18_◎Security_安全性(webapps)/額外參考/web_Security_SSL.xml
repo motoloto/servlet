@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<!--
+´ú¸Õ only
+ http://localhost:8080/Security1_BASIC
+
+ http://localhost:8080/Security1_BASIC/date.jsp
+
+ http://localhost:8080/Security1_BASIC/servlet/oreilly.servlet.example.AuthenticationSnoop
+ http://localhost:8080/Security1_BASIC/servlet/oreilly.servlet.example.HeaderSnoop
+ http://localhost:8080/Security1_BASIC/servlet/oreilly.servlet.example.PersonalizedWelcome
+ http://localhost:8080/Security1_BASIC/servlet/oreilly.servlet.example.SalaryServer
+-->
+
+<web-app>
+   
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>
+                SecretProtection
+            </web-resource-name>
+            <url-pattern>
+                /*   <!-- /* ©Î /servlet/oreilly.servlet.example.SalaryServer ª`·N: «ü³o­ÓURLºô­¶­n¨ü«OÅ@ --> 
+            </url-pattern>
+            
+            <http-method>
+                GET
+            </http-method>
+            <http-method>
+                POST
+            </http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>
+                tomcat     <!-- ª`·N:role(¨¤¦â), «ü½Ö¤~¯àµn¤J¦¨¥\, »PX:\jakarta-tomcat-4.0.4\conf\tomcat-users.xml ¬ÛÃö³s--> 
+            </role-name>
+        </auth-constraint>
+    
+        <user-data-constraint>
+	        <transport-guarantee>
+	          CONFIDENTIAL
+	        </transport-guarantee>
+	     </user-data-constraint>
+	    
+    </security-constraint>
+
+    <login-config>
+        <auth-method>
+            BASIC       <!-- ÄÝ¦óºØÅçÃÒ(Authentication)ªk¤§¤@ : BASIC, DIGEST, FORM, CLIENT-CERT -->
+        </auth-method>                                               
+        <realm-name>                                                 
+            Default     <!-- optional, only useful for BASIC and DIGEST -->     
+        </realm-name>                                                
+    </login-config>                                                  
+
+    <security-role>
+        <role-name>
+            tomcat
+        </role-name>
+    </security-role>
+</web-app>

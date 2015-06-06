@@ -1,0 +1,24 @@
+
+Servlet講義 (附錄-4的說明3)
+===========================
+
+A)說明: 
+  如果在 server.xml 的 Connector 標籤中，另外加入
+  useBodyEncodingForURI="true"的屬性時，即可讓Tomcat 5.x 6.x 
+  7.x在傳送GET的請求參數時，會使用和POST相同的字元編碼 (This 
+  will cause the Connector to use the request body's encoding for GET 
+  parameters)
+
+
+B)如下所示:
+  <Connector port="8081" protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" useBodyEncodingForURI="true" />
+
+C)以上表示當method=get時，將和method=post一樣只要先有req.setCharacterEncoding("Big5"); 即可
+      
+D)註: 1.當附錄-7 Filters(濾器)一章完成時 , 建議應該(如SL314_課程中分享中的SL314_Filter資料夾)
+        將req.setCharacterEncoding("Big5"); 設定於Filter之中 
+
+      2.此時Query String的中文處理程式碼 ，將可以從 Servlet/JSP 的程式中完全省去 
+        (注意: 完全省去的意思是指 server.xml 的 Connector 標籤中也已加入useBodyEncodingForURI="true"的屬性時)

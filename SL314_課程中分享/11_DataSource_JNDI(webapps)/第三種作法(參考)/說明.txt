@@ -1,0 +1,4 @@
+
+1. 將 DataSource_JNDI3.xml置入conf\Catalina\localhost之內
+2. XML檔案名稱必需與WebApp同名
+3. 優先於(並且會否定)第二種作法

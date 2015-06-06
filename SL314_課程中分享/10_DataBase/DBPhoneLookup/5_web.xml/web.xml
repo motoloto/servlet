@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+
+   <context-param>
+     <param-name>connection.driver</param-name>
+     <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+   </context-param>
+
+   <context-param>
+     <param-name>connection.url</param-name>
+     <param-value>jdbc:oracle:thin:@localhost:1521:orcl2</param-value>
+   </context-param>
+
+   <context-param>
+     <param-name>user</param-name>
+     <param-value>scott</param-value>
+   </context-param>
+
+   <context-param>
+     <param-name>password</param-name>
+     <param-value>tiger</param-value>
+   </context-param>
+   
+   
+  <servlet>
+		<servlet-name>DBPhoneLookup</servlet-name>
+		<servlet-class>servlet_examples.DBPhoneLookup</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DBPhoneLookup</servlet-name>
+		<url-pattern>/DBPhoneLookup</url-pattern>
+	</servlet-mapping>
+
+</web-app>

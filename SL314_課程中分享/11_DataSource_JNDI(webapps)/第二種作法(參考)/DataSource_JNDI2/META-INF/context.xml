@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Context path="/DataSource_JNDI2" docBase="DataSource_JNDI2"
+                      reloadable="true" crossContext="true">
+
+    <Resource name="jdbc/TestDB2" auth="Container"
+              type="javax.sql.DataSource" driverClassName="oracle.jdbc.driver.OracleDriver"
+              url="jdbc:oracle:thin:@localhost:1521:XE"
+              username="hr" password="123456" maxActive="20" maxIdle="10"
+              maxWait="-1"/>
+
+</Context>

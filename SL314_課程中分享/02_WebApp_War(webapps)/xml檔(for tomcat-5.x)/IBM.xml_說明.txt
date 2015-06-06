@@ -1,0 +1,7 @@
+
+-for Servlet reloading
+-將IBM.xml置於目錄:
+   X:\jakarta-tomcat-5.0.30\conf\Catalina\localhost 之下
+
+-註: 
+ Tomcat 6.x 與 7.x 的 Servlet Reloading 可由 context.xml 設定for所有的WebApp

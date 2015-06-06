@@ -1,0 +1,33 @@
+	// SSL ON
+	if (!request.isSecure()) {
+		StringBuffer sb = HttpUtils.getRequestURL(request);
+		String s = sb.toString();
+		String newURL;
+		int beginPos = s.indexOf(':', 7);
+		if (beginPos != -1) {
+			int endPos = s.indexOf('/', beginPos);
+			newURL = sb.replace(beginPos+1, endPos, "8443").insert(4, 's').toString();
+		} else {
+			int pos = s.indexOf('/', 10);
+			newURL = sb.insert(pos, ":8443").insert(4, 's').toString();
+		}
+		response.sendRedirect(newURL);
+		return;
+	}
+
+	//SSL OFF
+	if (request.isSecure()) {
+		StringBuffer sb = HttpUtils.getRequestURL(request);
+		String s = sb.toString();
+		String newURL;
+		int beginPos = s.indexOf(':', 7);
+		if (beginPos != -1) {
+			int endPos = s.indexOf('/', beginPos);
+			newURL = sb.replace(beginPos+1, endPos, "8080").deleteCharAt(4).toString();
+		} else {
+			int pos = s.indexOf('/', 10);
+			newURL = sb.insert(pos, ":8080").deleteCharAt(4).toString();
+		}
+		response.sendRedirect(newURL);
+		return;
+	}
