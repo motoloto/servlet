@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<TITLE>日期輸入輔助示範1</TITLE>
+
+<script language="JavaScript" src = js/checkdate.js ></script>
+
+</HEAD>
+<BODY>
+<H1 ALIGN=CENTER> 日期輸入輔助示範 </H1>
+<HR ALIGN=CENTER color=blue>
+<br>
+
+<CENTER>
+  <font color=blue>自動調整正確 年-月-日</font>
+ <TABLE border="1" bordercolor=blue >
+ <form name="calform1" action="receipt.jsp" target=_blank>
+ <tr>
+  <td> 請選擇日期 : </td>
+  <td>
+    <font size="2">民國</font>
+    
+    <select name="year" onChange="javascript: RecheckDate (document.calform1);" size=1> 
+      <option value="options">請選擇</option>                                   
+      <option value="2000">89
+      <option value="2001">90
+      <option value="2002">91
+      <option value="2003">92
+      <option value="2004">93
+      <option value="2005">94
+    </select>
+    <font size="2"> 年</font> 
+    
+    <select name="month"  onChange="javascript: RecheckDate (document.calform1);" size=1>   
+    <option  value="options">請選擇</option>
+    <option value="1">1</option>   <option value="2">2</option>
+    <option value="3">3</option>   <option value="4">4</option>
+    <option value="5">5</option>   <option value="6">6</option>
+    <option value="7">7</option>   <option value="8">8</option>
+    <option value="9">9</option>   <option value="10">10</option>
+    <option value="11">11</option> <option value="12">12</option>
+    </select>
+    <font size="2">月</font>
+    
+    <select name="day" size=1>   
+    <option  value="options">請選擇</option>
+    <option value=1>1</option>   <option value=2>2</option>
+    <option value=3>3</option>   <option value=4>4</option>
+    <option value=5>5</option>   <option value=6>6</option>
+    <option value=7>7</option>   <option value=8>8</option>
+    <option value=9>9</option>   <option value=10>10</option>
+    <option value=11>11</option> <option value=12>12</option>
+    <option value=13>13</option> <option value=14>14</option>
+    <option value=15>15</option> <option value=16>16</option>
+    <option value=17>17</option> <option value=18>18</option>
+    <option value=19>19</option> <option value=20>20</option>
+    <option value=21>21</option> <option value=22>22</option>
+    <option value=23>23</option> <option value=24>24</option>
+    <option value=25>25</option> <option value=26>26</option>
+    <option value=27>27</option> <option value=28>28</option>
+    <option value=29>29</option> <option value=30>30</option>
+    <option value=31>31</option>
+    </select><font size="2">日</font></TD>              
+    
+    <td><input type="button" value="送出查詢" onClick="fun()"><input type="reset" value="重新輸入"></td>
+ </tr>
+     <input type="hidden" name="datebox1" >
+ </form>     
+
+</TABLE>
+</CENTER>
+</BODY>
+    <script>
+       function fun() {
+         with(document.calform1){
+           datebox1.value = year.value+"-"+month.value+"-"+day.value;
+           if ((year.value)=="options" || (month.value)=="options" || (day.value)=="options") 
+                 alert("日期資料不正確!!");
+           else submit();
+         }
+       }
+     </script>
+
+</HTML>     
