@@ -1,0 +1,25 @@
+
+ 
+
+  1. ●先準備好"原文文字檔" , 再用 native2ascii.exe 將之轉碼為 UNICODE碼格式 的ResourceBundle檔
+       如下:
+       native2ascii ApplicationResources_zh.txt ApplicationResources_zh.properties
+       native2ascii ApplicationResources_ja.txt ApplicationResources_ja.properties
+
+
+  2. 註: 
+     如(只有)該"原文文字檔"是用真正用該語言編輯器寫出 , 
+     ●則(才)需用 --> native2ascii -encoding encoding_name 指令
+       如下:
+       native2ascii -encoding shift_JIS ApplicationResources_ja.txt ApplicationResources_ja.properties
+
+
+
+  3. 額外反向練習:
+     將UNICODE碼 反向轉回原來的文字檔 ,
+     ●則可用 --> native2ascii -reverse  指令
+       如下:
+       native2ascii -reverse ApplicationResources_zh.properties Chinese.txt
+       native2ascii -reverse ApplicationResources_ja.properties Japan.txt
+
+

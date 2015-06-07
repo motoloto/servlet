@@ -1,0 +1,25 @@
+errors.header=<font color='red'><b>請修正下列錯誤:</b><ul>
+errors.footer=</ul></font>
+
+error.empno.required= <li>{0} - 請輸入員工編號!</li>
+error.empno.type= <li>{0} - 員工編號格式不正確.</li>
+
+error.hiredate.required= <li>{0} - 請輸入日期!</li>
+
+error.sal.type= <li>{0} - 薪水請填數字.</li>
+error.comm.type= <li>{0} - 獎金請填數字.</li>
+
+
+# Generic errors
+error.unexpectedError= 非預期(或企業邏輯)的錯誤: {0}
+
+
+emp.empno=<b>員工編號:</b>
+emp.ename=<b>員工姓名:</b>
+emp.job=<b>職位:</b>
+emp.hiredate=<b>雇用日期:</b>
+emp.sal=<b>薪水:</b>
+emp.comm=<b>獎金:</b>
+emp.deptno=<b>部門:</b>
+empAdd.submit=送出新增
+empUpdate.submit=送出修改

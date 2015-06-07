@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="empForm" type="com.emp.view.EmpForm" />
+		<form-bean name="empnoForm" type="com.emp.view.EmpnoForm" />
+	</form-beans>
+
+	<action-mappings>
+		
+		<!-- Declare the /emp/getOne_For_Display.do action -->
+		<action path="/emp/getOne_For_Display" type="com.emp.controller.GetOneEmpAction"
+			name="empnoForm" scope="request" validate="true" input="/emp/select_page.jsp">
+			<forward name="success" path="/emp/listOneEmp.jsp" />
+			<forward name="error" path="/emp/select_page.jsp" />
+		</action>
+
+		<!-- Declare the /emp/getOne_For_Update.do action -->
+		<action path="/emp/getOne_For_Update" type="com.emp.controller.GetOneEmpAction"
+			name="empnoForm" scope="request" validate="true" input="/emp/listAllEmp.jsp">
+			<forward name="success" path="/emp/update_emp_input.jsp" />
+			<forward name="error" path="/emp/listAllEmp.jsp" />
+		</action>
+
+		<!-- Declare the /emp/update.do action -->
+		<action path="/emp/update" type="com.emp.controller.UpdateEmpAction"
+			name="empForm" scope="request" validate="true" input="/emp/update_emp_input.jsp">
+			<forward name="success" path="/emp/listOneEmp.jsp" />
+			<forward name="error" path="/emp/update_emp_input.jsp" />
+		</action>
+
+		<!-- Declare the /emp/insert.do action -->
+		<action path="/emp/insert" type="com.emp.controller.AddEmpAction"
+			name="empForm" scope="request" validate="true" input="/emp/addEmp.jsp">
+			<forward name="success" path="/emp/listAllEmp.jsp" />
+			<forward name="error" path="/emp/addEmp.jsp" />
+		</action>
+
+		<!-- Declare the /emp/delete.do action -->
+		<action path="/emp/delete" type="com.emp.controller.DeleteEmpAction"
+			name="empnoForm" scope="request" validate="true" input="/emp/ListAllEmp.jsp">
+			<forward name="success" path="/emp/listAllEmp.jsp" />
+			<forward name="error" path="/emp/listAllEmp.jsp" />
+		</action>
+
+	</action-mappings>
+
+	<message-resources parameter="resources.ApplicationResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,
+                   /WEB-INF/validation.xml" />
+	</plug-in>
+
+</struts-config>
+

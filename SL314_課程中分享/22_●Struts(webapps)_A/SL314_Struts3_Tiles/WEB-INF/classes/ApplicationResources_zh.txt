@@ -1,0 +1,22 @@
+# Select League fields
+error.seasonField.required=<li>請選擇聯盟-季節.</li>
+error.yearField.required=<li>年(year)欄位, 必需是正整數.</li>
+error.yearField.range=<li> 年(year)欄位, 必需在 2000 - 2010 之間.</li>
+error.leagueNotFound=<li>The league you selected does not yet exist; please select another.</li>
+
+# Enter Player fields
+error.nameField.required=<li>You must enter your full name.</li>
+error.addressField.required=<li>You must enter your full address.</li>
+
+# Register for Division fields
+error.divisionField.required=<li>You must select a division.</li>
+
+# Create a League fields
+error.titleField.required=<li>請輸入聯盟的抬頭(title).</li>
+
+# Generic errors
+error.unexpectedError=<li>An unexpected error occured: <tt>{0}</tt></li>
+
+# Struts <html:errors/> tag properties
+errors.header=<font color='red'>請修正以下錯誤.<ul>
+errors.footer=</ul></font>
