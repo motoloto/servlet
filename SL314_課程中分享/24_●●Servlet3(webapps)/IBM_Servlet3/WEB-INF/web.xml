@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0"
+    metadata-complete="false">
+    <!-- Servlet 3.0 ªº³¡¸p´y­zÀÉ web.xml ªº³»¼h¼ÐÅÒ ¦³¤@­Ó metadata-complete ÄÝ©Ê¡A¸ÓÄÝ©Ê«ü©w·í«eªº³¡¸p´y­zÀÉ web.xml ¬O§_¬O§¹¥þªº¡C  -->
+    <!-- ¹w³]¬°false-->
+    <!-- ¦pªG³]¸m¬° true¡A«h¦b³¡¸p®É±N¥u¨Ì¿à web.xml¡A±N©¿²¤©Ò¦³ªºAnotationµù¸Ñ¡]¦P®É¤]·|¸õ¹L web-fragment.xml ªº±½ºË¡A¥ç§Y¸T¥Î¥i´¡©Ê¤ä«ù¡^-->
+    <!-- ¦pªG¦bweb.xml¡BAnotation¡Bweb-fragment.xml¤¤©Ò³]©wªºServlet¦³¦P¦Wªºµù¥U¦WºÙ¡A«h¥Hweb.xml¤¤ªº³]©w¬°¥D(¶¶§Ç¬°web.xml -> Anotation -> web-fragment.xml) -->
+                         
+    <servlet>                           <!-- ¤w¸gµLªk¥Hµù¥U¦WºÙ(http://localhost:8081/IBM/servlet/hi)ªº¤è¦¡°õ¦æ,¦]¬°Invoker servletªº¥\¯à¦bTomcat 7.x ¤w¸g³Q²¾°£ -->
+        <servlet-name>hi</servlet-name>
+        <servlet-class>HelloWorld</servlet-class>
+    </servlet>
+                         
+    <servlet-mapping>                   <!-- ©ú½T¹ïÀ³ http://localhost:8081/IBM/hello.html -->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>/hello.html</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>                   <!-- «e¸m¸ô®|¹ïÀ³ http://localhost:8081/IBM/hello.html/xxxxx -->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>/hello.html/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>                   <!-- ©µ¦ùÀÉ¦W¹ïÀ³ http://localhost:8081/IBM/xxx/yyy/zzz.mm-->
+        <servlet-name>hi</servlet-name>
+        <url-pattern>*.mm</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- AsyncDemoServletªº²Ä¤G­Óµù¥U¦WºÙ»Pmapping -->
+    <servlet>
+		    <servlet-name>AsyncDemoServlet</servlet-name>
+		    <servlet-class>async1.AsyncDemoServlet</servlet-class>
+		    <async-supported>true</async-supported>
+	  </servlet>
+	  <servlet-mapping>
+		    <servlet-name>AsyncDemoServlet</servlet-name>
+		    <url-pattern>/AsyncDemoServlet</url-pattern>
+	  </servlet-mapping>
+    
+</web-app>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0"
+    metadata-complete="false"> <!-- ¹w³]¬°false-->
+
+  <display-name>SL-314 WebApp Example</display-name>
+  <description>
+    This Web Application demonstrates using the context-scope to store
+    a common resource: the "leagueList" for the Soccer League webapp.
+  </description>
+
+  <context-param>
+    <param-name>leagues-file</param-name>
+    <param-value>/WEB-INF/data/leagues.txt</param-value>
+  </context-param>
+
+<!-- ¥i¬Ù²¤, ¤w¥ÑInitializeLeaguesListener.java ²Ä17¦æªº @WebListener µù¸Ñ¨ú¥N
+  <listener>
+    <listener-class>sl314.listener.InitializeLeaguesListener</listener-class>
+  </listener>
+-->
+  
+  <servlet>
+    <servlet-name>ListLeagues</servlet-name>
+    <servlet-class>sl314.view.ListLeaguesServlet</servlet-class>
+  </servlet>
+
+
+  <servlet-mapping>
+    <servlet-name>ListLeagues</servlet-name>
+    <url-pattern>/list_leagues.view</url-pattern>
+  </servlet-mapping>
+
+</web-app>

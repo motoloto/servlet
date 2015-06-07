@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+    version="3.0"
+    metadata-complete="false">
+    
+<!-- ¦bweb.xml¤¤¨Ï¥Î<absolute-ordering>©w¸qweb-fragment.xmlªºµ´¹ï¶¶§Ç(Absolute ordering) -->
+
+
+<!-- ¨Ò¦p:¡i¥H¤U¬° myFragment-1 ¦b myFragment-2 ¤§«á¡j-->
+<!--    
+    <absolute-ordering>  
+        <name>myFragment-2</name>
+        <name>myFragment-1</name>  
+    </absolute-ordering>     
+-->
+  
+</web-app>
